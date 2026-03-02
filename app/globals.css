@@ -24,3 +24,34 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* --- Regras para Quebra de Página no PDF --- */
+#preview-content {
+  page-break-inside: avoid;
+}
+
+#preview-content * {
+  page-break-inside: avoid;
+}
+
+#preview-content h1,
+#preview-content h2,
+#preview-content h3,
+#preview-content h4,
+#preview-content h5,
+#preview-content h6 {
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+#preview-content p,
+#preview-content li,
+#preview-content blockquote,
+#preview-content pre,
+#preview-content code {
+  page-break-inside: avoid;
+}
+
+#preview-content table,
+#preview-content tr {
+  page-break-inside: avoid;
+}
