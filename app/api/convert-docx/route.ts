@@ -23,7 +23,13 @@ export async function POST(req: NextRequest) {
     });
 
     // 3. Retorna o arquivo para download
-    return new NextResponse(fileBuffer, {
+    const uint8Array = new Uint8Array(
+      fileBuffer instanceof Buffer 
+        ? fileBuffer 
+        : Buffer.from(fileBuffer)
+    );
+
+    return new NextResponse(uint8Array, {
       headers: {
         "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         "Content-Disposition": 'attachment; filename="documento.docx"',
